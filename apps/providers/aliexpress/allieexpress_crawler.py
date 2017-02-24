@@ -1,4 +1,4 @@
-import apps.providers.provider as provider
+from apps.providers import provider
 import apps.providers.product as product
 
 class AliExpressCrawler(provider.Provider):
