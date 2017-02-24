@@ -9,4 +9,4 @@ class Product:
         print ("Product has been made!")
 
     def __repr__(self):
-        return f"product {self.name}"
+        return "product {}".format(self.name)
