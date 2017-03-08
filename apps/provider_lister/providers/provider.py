@@ -1,4 +1,4 @@
-import apps.provider_lister.providers.product_service as product
+import apps.provider_lister.product as product
 
 
 class Provider:
@@ -7,8 +7,8 @@ class Provider:
         raise NotImplementedError()
 
     @staticmethod
-    def add_product(prod):
-        product.Product_Service.add_product(prod)
+    def add_product(products):
+        product.Product_Service.add_products(products)
 
     def extract_product(self):
         raise NotImplementedError()

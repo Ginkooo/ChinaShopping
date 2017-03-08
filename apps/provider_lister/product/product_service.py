@@ -1,10 +1,14 @@
 class Product_Service:
-    LIST = []
+    PRODUCTS = []
 
     @classmethod
-    def add_product(cls, product):
-        cls.LIST.append(product)
+    def add_products(cls, products):
+        cls.PRODUCTS.extend(products)
 
     @classmethod
     def get_products(cls):
-        return cls.LIST
+        return cls.PRODUCTS
+
+    @classmethod
+    def clear_products(cls):
+        cls.PRODUCTS.clear()

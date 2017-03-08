@@ -111,6 +111,6 @@ STATIC_URL = '/static/'
 
 
 PROVIDERS = [
-    alieexpress_crawler.AlieexpressCrawler()
+    alieexpress_crawler.AliexpressCrawler(),
     ]
 
