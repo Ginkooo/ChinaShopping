@@ -1,12 +1,9 @@
-class Product:
+from django.db import models
 
-    id = 0
+class Product(models.Model):
 
     def __init__(self, name: str, price_in_dollars: float):
         self.name = name
         self.price_in_dollars = price_in_dollars
-        Product.id += 1
         print ("Product has been made!")
-
-    def __repr__(self):
-        return "product {}".format(self.name)
+	

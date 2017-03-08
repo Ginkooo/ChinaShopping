@@ -1,4 +1,4 @@
-import apps.providers.product_service as product
+import apps.provider_lister.providers.product_service as product
 
 
 class Provider:
@@ -12,4 +12,3 @@ class Provider:
 
     def extract_product(self):
         raise NotImplementedError()
-
