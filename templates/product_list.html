@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-{{ products }}
+	{% for product in products %}
+	{{ product.name }} which costs {{ product.price_in_dollars }}
+	<br>
+	{% endfor %}
 </body>
 </html>

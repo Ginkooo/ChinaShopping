@@ -3,3 +3,4 @@ class Product:
         self.name = name
         self.link = link
         self.price_in_dollars = price_in_dollars
+
