@@ -1,5 +1,7 @@
 import os
+import sys
 from apps.provider_lister.providers.alieexpress import alieexpress_crawler
+from apps.provider_lister.connection.connection_service import ConnectionService
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'apps.provider_lister',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +72,14 @@ DATABASES = {
     }
 }
 
-
+if 'test' in sys.argv:
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(os.path.dirname(__file__), 'test.db'),
+                'TEST_NAME': os.path.join(os.path.dirname(__file__), 'test.db'),
+                }
+            }
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -111,6 +121,6 @@ STATIC_URL = '/static/'
 
 
 PROVIDERS = [
-    alieexpress_crawler.AliexpressCrawler(),
+    alieexpress_crawler.AliexpressCrawler(ConnectionService()),
     ]
 
